@@ -1,0 +1,5 @@
+Changelog for CacheClear
+
+CacheClear 1.0.0
+---------------------------------
+Initial Version
