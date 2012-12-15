@@ -6,4 +6,4 @@ CacheClear Extra for MODx Revolution
 
 Documentation is available at [Bob's Guides](http://bobsguides.com/cacheclear-tutorial.html)
 
-Utility snippet -- deletes all files in the core/cache directory
+Utility snippet for MODX Revolution -- deletes all files in the core/cache directory
