@@ -61,16 +61,18 @@ $cacheDir = $cm->getCachePath();
 
 $cacheDir = rtrim($cacheDir, '/\\');
 
-$output .= '<p>' . $modx->lexicon('cc_cache_dir') . ': ' . $cacheDir . '<\p><br />';
+$output .= '<p>' . $modx->lexicon('cc_cache_dir') . ': ' . $cacheDir;
+$output .= '<br />';
 
 $files = scandir($cacheDir);
 
+
+$output .= "<ul>\n";
 foreach($files as $file) {
     if ($file == '.' || $file == '..') {
         continue;
     }
     if (is_dir($cacheDir . '/' . $file)) {
-        $output .= "<ul>\n";
         $output .= "\n<li>" . $modx->lexicon('cc_removing') . ': ' . $file . '</li>';
         rrmdir($cacheDir . '/' . $file);
         if (is_dir($cacheDir . '/' . $file)) {
@@ -81,7 +83,7 @@ foreach($files as $file) {
     }
 }
 
-$output .= "\n</ul><p>" . $modx->lexicon('cc_finished') . "</p>";
+$output .= "\n</p></ul><p>" . $modx->lexicon('cc_finished') . "</p>";
 
 
 return $output;
