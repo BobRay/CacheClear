@@ -1,6 +1,5 @@
-<p>Deletes all files in the core/cache directory</p>
+<p>CacheClear is an extra for MODX Revolution that deletes all files in the MODX core/cache directory. It is for people who may not have shell or FTP access to a site or who want a convenient way to completely empty the cache in the MODX Manager.</p>
 
-<p>(Jump to <a href="[[~[[*id]]]]#propertiesTable">Properties Table</a>.)</p>
 
 <h3>Installing CacheClear</h3>
 
@@ -12,9 +11,8 @@ when it changes to "Downloaded," click on the "Finish" button. That should bring
 
 <h3>Usage</h3>
 
+<p>To use CacheClear, just view the CacheClear Resource. You should see a progress report indicating the cache subdirectories that are being removed.</p>
+
+<p>Note that if you look at the cache on the Files tab in the Manager, it will appear that the files have not been deleted because MODX regenerates the directories almost immediately. ClearCache tests for the removal of each directory and will report any failures. If you don't see any failure messages when CacheClear runs, you can assume that it deleted all the directories and files in the cache.</p>
 
 
-
-<a name="propertiesTable"></a>
-
-<h3>CacheClear Properties</h3>
