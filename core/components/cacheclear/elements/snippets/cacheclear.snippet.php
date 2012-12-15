@@ -61,7 +61,7 @@ $cacheDir = $cm->getCachePath();
 
 $cacheDir = rtrim($cacheDir, '/\\');
 
-$output .= "<br />" . $modx->lexicon('cc_cache_dir~~Cache Directory') . ': ' . $cacheDir;
+$output .= "<br />" . $modx->lexicon('cc_cache_dir') . ': ' . $cacheDir;
 
 $files = scandir($cacheDir);
 
@@ -70,10 +70,10 @@ foreach($files as $file) {
         continue;
     }
     if (is_dir($cacheDir . '/' . $file)) {
-        $output .= "<br />" . $modx->lexicon('cc_removing~~Removing') . ': ' . $file;
+        $output .= "<br />" . $modx->lexicon('cc_removing') . ': ' . $file;
         rrmdir($cacheDir . '/' . $file);
         if (is_dir($cacheDir . '/' . $file)) {
-            $output .= "<br />" . $modx->lexicon('cc_failed_to_remove~~Failed to Remove') . ': ' . $file;
+            $output .= "<br />" . $modx->lexicon('cc_failed_to_remove') . ': ' . $file;
         }
     } else {
         unlink($cacheDir . '/' . $file);
