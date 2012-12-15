@@ -37,6 +37,7 @@
 
 
 /* used in CacheClear or its included classes  */
+$_lang['cc_finished'] = 'Finished!';
 $_lang['cc_cache_dir'] = 'Cache Directory';
 $_lang['cc_removing'] = 'Removing Directory';
 $_lang['cc_failed_to_remove'] = 'Failed to Remove';

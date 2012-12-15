@@ -81,7 +81,7 @@ foreach($files as $file) {
     }
 }
 
-$output .= "\n</ul><p>" . $modx->lexicon('cc_finished~~Finished!') . "</p>";
+$output .= "\n</ul><p>" . $modx->lexicon('cc_finished') . "</p>";
 
 
 return $output;
