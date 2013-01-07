@@ -1,5 +1,9 @@
 Changelog for CacheClear
 
+CacheClear 1.0.1
+---------------------------------
+Fixed tutorial link in readme
+
 CacheClear 1.0.0
 ---------------------------------
 Initial Version
