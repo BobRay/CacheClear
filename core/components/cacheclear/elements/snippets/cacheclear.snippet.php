@@ -34,21 +34,21 @@
  * @package cacheclear
  **/
 
- if (!function_exists("rrmdir")) {
+if (!function_exists("rrmdir")) {
     function rrmdir($dir) {
         if (is_dir($dir)) {
-             $objects = scandir($dir);
-             foreach ($objects as $object) {
+            $objects = scandir($dir);
+            foreach ($objects as $object) {
                 if ($object != "." && $object != "..") {
-                    if (filetype($dir."/".$object) == "dir") {
-                        rrmdir($dir."/".$object);
+                    if (filetype($dir . "/" . $object) == "dir") {
+                        rrmdir($dir . "/" . $object);
                     } else {
-                        unlink($dir."/".$object);
+                        unlink($dir . "/" . $object);
                     }
                 }
-             }
-             reset($objects);
-             rmdir($dir);
+            }
+            reset($objects);
+            rmdir($dir);
         }
     }
 }
@@ -68,15 +68,18 @@ $files = scandir($cacheDir);
 
 
 $output .= "<ul>\n";
-foreach($files as $file) {
+foreach ($files as $file) {
     if ($file == '.' || $file == '..') {
         continue;
     }
     if (is_dir($cacheDir . '/' . $file)) {
+        if ($file == 'logs') {
+            continue;
+        }
         $output .= "\n<li>" . $modx->lexicon('cc_removing') . ': ' . $file . '</li>';
         rrmdir($cacheDir . '/' . $file);
         if (is_dir($cacheDir . '/' . $file)) {
-            $output .= "\n<li>" . $modx->lexicon('cc_failed_to_remove') . ': ' . $file .  '</li>';
+            $output .= "\n<li>" . $modx->lexicon('cc_failed_to_remove') . ': ' . $file . '</li>';
         }
     } else {
         unlink($cacheDir . '/' . $file);
