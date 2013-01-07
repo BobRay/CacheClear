@@ -1,5 +1,9 @@
 Changelog for CacheClear
 
+CacheClear 1.0.2
+---------------------------------
+Leave error log alone
+
 CacheClear 1.0.1
 ---------------------------------
 Fixed tutorial link in readme
