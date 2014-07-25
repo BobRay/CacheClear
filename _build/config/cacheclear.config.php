@@ -16,14 +16,14 @@ $components = array(
     'packageName' => 'CacheClear',  /* No spaces, no dashes */
     'packageNameLower' => $packageNameLower,
     'packageDescription' => 'Deletes all files in the core/cache directory',
-    'version' => '1.0.2',
+    'version' => '1.0.3',
     'release' => 'pl',
     'author' => 'Bob Ray',
     'email' => '<http://bobsguides.com>',
     'authorUrl' => 'http://bobsguides.com',
     'authorSiteName' => "Bob's Guides",
     'packageDocumentationUrl' => 'http://bobsguides.com/cacheclear-tutorial.html',
-    'copyright' => '2012',
+    'copyright' => '2012-2014',
 
     /* no need to edit this except to change format */
     'createdon' => strftime('%m-%d-%Y'),
