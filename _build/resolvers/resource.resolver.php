@@ -35,7 +35,7 @@ if (!function_exists('checkFields')) {
         $fields = explode(',', $required);
         foreach ($fields as $field) {
             if (! isset($objectFields[$field])) {
-                $modx->log(MODX::LOG_LEVEL_ERROR, '[Resource Resolver] Missing field: ' . $field);
+                $modx->log(modX::LOG_LEVEL_ERROR, '[Resource Resolver] Missing field: ' . $field);
                 return false;
             }
         }
@@ -73,7 +73,7 @@ if($object->xpdo) {
                         if ($templateObj) {
                             $resource->set('template', $templateObj->get('id'));
                         } else {
-                            $modx->log(MODX::LOG_LEVEL_ERROR, '[Resource Resolver] Could not find template: ' . $fields['template']);
+                            $modx->log(modX::LOG_LEVEL_ERROR, '[Resource Resolver] Could not find template: ' . $fields['template']);
                         }
                     }
                     if (!empty($fields['parent'])) {
@@ -82,7 +82,7 @@ if($object->xpdo) {
                             if ($parentObj) {
                                 $resource->set('parent', $parentObj->get('id'));
                             } else {
-                                $modx->log(MODX::LOG_LEVEL_ERROR, '[Resource Resolver] Could not find parent: ' . $fields['parent']);
+                                $modx->log(modX::LOG_LEVEL_ERROR, '[Resource Resolver] Could not find parent: ' . $fields['parent']);
                             }
                         }
                     }
