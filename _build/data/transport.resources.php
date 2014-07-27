@@ -2,7 +2,7 @@
 /**
  * resources transport file for CacheClear extra
  *
- * Copyright 2012 by Bob Ray <http://bobsguides.com>
+ * Copyright 2012-2014 by Bob Ray <http://bobsguides.com>
  * Created on 12-14-2012
  *
  * @package cacheclear
@@ -26,40 +26,40 @@ if (! function_exists('stripPhpTags')) {
 $resources = array();
 
 $resources[1] = $modx->newObject('modResource');
-$resources[1]->fromArray(array(
-    'id' => '1',
-    'type' => 'document',
-    'contentType' => 'text/html',
-    'pagetitle' => 'CacheClear',
-    'longtitle' => '',
-    'description' => '',
-    'alias' => 'cache-clear',
-    'link_attributes' => '',
-    'published' => '',
-    'isfolder' => '',
-    'introtext' => '',
-    'richtext' => '',
-    'template' => 'default',
-    'menuindex' => '1',
-    'searchable' => '1',
-    'cacheable' => '1',
-    'createdby' => '1',
-    'editedby' => '1',
-    'deleted' => '',
-    'deletedon' => '0',
-    'deletedby' => '0',
-    'menutitle' => '',
-    'donthit' => '',
-    'privateweb' => '',
-    'privatemgr' => '',
-    'content_dispo' => '0',
-    'hidemenu' => '',
-    'class_key' => 'modDocument',
-    'context_key' => 'web',
-    'content_type' => '1',
-    'hide_children_in_tree' => '0',
-    'show_in_tree' => '1',
-    'properties' => '',
+$resources[1]->fromArray(array (
+  'id' => 1,
+  'type' => 'document',
+  'contentType' => 'text/html',
+  'pagetitle' => 'CacheClear',
+  'longtitle' => '',
+  'description' => '',
+  'alias' => 'cache-clear',
+  'link_attributes' => '',
+  'published' => true,
+  'isfolder' => false,
+  'introtext' => '',
+  'richtext' => false,
+  'template' => 'default',
+  'menuindex' => 11,
+  'searchable' => true,
+  'cacheable' => true,
+  'createdby' => 1,
+  'editedby' => 1,
+  'deleted' => false,
+  'deletedon' => 0,
+  'deletedby' => 0,
+  'menutitle' => '',
+  'donthit' => false,
+  'privateweb' => false,
+  'privatemgr' => false,
+  'content_dispo' => 0,
+  'hidemenu' => false,
+  'class_key' => 'modDocument',
+  'context_key' => 'web',
+  'content_type' => 1,
+  'hide_children_in_tree' => 0,
+  'show_in_tree' => 1,
+  'properties' => '',
 ), '', true, true);
 $resources[1]->setContent(file_get_contents($sources['data'].'resources/cacheclear.content.html'));
 

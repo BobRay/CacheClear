@@ -3,7 +3,7 @@
 * Resource resolver  for CacheClear extra.
 * Sets template, parent, and (optionally) TV values
 *
-* Copyright 2012 by Bob Ray <http://bobsguides.com>
+* Copyright 2012-2014 by Bob Ray <http://bobsguides.com>
 * Created on 12-14-2012
 *
  * CacheClear is free software; you can redistribute it and/or modify it under the
