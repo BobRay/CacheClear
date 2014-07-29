@@ -4,6 +4,7 @@
  *
  * Copyright 2012-2014 by Bob Ray <http://bobsguides.com>
  * Created on 12-14-2012
+ * Translation by Jan-Christoph Ihrens (enigmatic-user)
  *
  * CacheClear is free software; you can redistribute it and/or modify it under the
  * terms of the GNU General Public License as published by the Free Software
