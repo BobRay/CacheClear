@@ -3,7 +3,7 @@
 * Resource resolver  for CacheClear extra.
 * Sets template, parent, and (optionally) TV values
 *
-* Copyright 2012-2014 by Bob Ray <http://bobsguides.com>
+* Copyright 2012-2015 by Bob Ray <http://bobsguides.com>
 * Created on 12-14-2012
 *
  * CacheClear is free software; you can redistribute it and/or modify it under the
@@ -51,7 +51,7 @@ if($object->xpdo) {
             $intersects = array (
                 0 =>  array (
                   'pagetitle' => 'CacheClear',
-                  'parent' => 0,
+                  'parent' => '0',
                   'template' => 'default',
                 ),
             );
@@ -62,14 +62,18 @@ if($object->xpdo) {
                     if (! checkFields('pagetitle,parent,template', $fields)) {
                         continue;
                     }
-                    $resource = $modx->getObject('modResource', array('pagetitle' => $fields['pagetitle']));
+                    $resource = $modx->getObject('modResource',
+                        array('pagetitle' => $fields['pagetitle']));
                     if (! $resource) {
                         continue;
                     }
                     if ($fields['template'] == 'default') {
                         $resource->set('template', $modx->getOption('default_template'));
+                    } elseif (empty($fields['template'])) {
+                        $resource->set('template', 0);
                     } else {
-                        $templateObj = $modx->getObject('modTemplate', array('templatename' => $fields['template']));
+                        $templateObj = $modx->getObject('modTemplate',
+                            array('templatename' => $fields['template']));
                         if ($templateObj) {
                             $resource->set('template', $templateObj->get('id'));
                         } else {

@@ -2,7 +2,7 @@
 /**
  * resources transport file for CacheClear extra
  *
- * Copyright 2012-2014 by Bob Ray <http://bobsguides.com>
+ * Copyright 2012-2015 by Bob Ray <http://bobsguides.com>
  * Created on 12-14-2012
  *
  * @package cacheclear
@@ -40,7 +40,7 @@ $resources[1]->fromArray(array (
   'introtext' => '',
   'richtext' => false,
   'template' => 'default',
-  'menuindex' => 11,
+  'menuindex' => 14,
   'searchable' => true,
   'cacheable' => true,
   'createdby' => 1,
@@ -53,7 +53,7 @@ $resources[1]->fromArray(array (
   'privateweb' => false,
   'privatemgr' => false,
   'content_dispo' => 0,
-  'hidemenu' => false,
+  'hidemenu' => true,
   'class_key' => 'modDocument',
   'context_key' => 'web',
   'content_type' => 1,

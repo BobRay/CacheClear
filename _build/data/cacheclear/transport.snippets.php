@@ -2,7 +2,7 @@
 /**
  * snippets transport file for CacheClear extra
  *
- * Copyright 2012-2014 by Bob Ray <http://bobsguides.com>
+ * Copyright 2012-2015 by Bob Ray <http://bobsguides.com>
  * Created on 12-14-2012
  *
  * @package cacheclear
