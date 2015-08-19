@@ -242,13 +242,13 @@ if ($hasResources) {
     } else {
         $attributes = array(
             xPDOTransport::PRESERVE_KEYS => false,
-            xPDOTransport::UPDATE_OBJECT => true,
+            xPDOTransport::UPDATE_OBJECT => false,
             xPDOTransport::UNIQUE_KEY => 'pagetitle',
             xPDOTransport::RELATED_OBJECTS => true,
             xPDOTransport::RELATED_OBJECT_ATTRIBUTES => array(
                 'ContentType' => array(
                     xPDOTransport::PRESERVE_KEYS => false,
-                    xPDOTransport::UPDATE_OBJECT => true,
+                    xPDOTransport::UPDATE_OBJECT => false,
                     xPDOTransport::UNIQUE_KEY => 'name',
                 ),
             ),
