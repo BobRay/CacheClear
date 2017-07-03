@@ -2,7 +2,7 @@
 /**
  * en default topic lexicon file for CacheClear extra
  *
- * Copyright 2012 by Bob Ray <http://bobsguides.com>
+ * Copyright 2012-2017 by Bob Ray <https://bobsguides.com>
  * Created on 12-14-2012
  *
  * CacheClear is free software; you can redistribute it and/or modify it under the

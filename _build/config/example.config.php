@@ -10,11 +10,11 @@ $components = array(
     'version' => '1.0.0',
     'release' => 'beta1',
     'author' => 'Bob Ray',
-    'email' => '<http://bobsguides.com>',
-    'authorUrl' => 'http://bobsguides.com',
+    'email' => '<https://bobsguides.com>',
+    'authorUrl' => 'https://bobsguides.com',
     'authorSiteName' => "Bob's Guides",
-    'packageDocumentationUrl' => 'http://bobsguides.com/example-tutorial.html',
-    'copyright' => '2012',
+    'packageDocumentationUrl' => 'https://bobsguides.com/example-tutorial.html',
+    'copyright' => '2014-2017',
 
     /* no need to edit this except to change format */
     'createdon' => strftime('%m-%d-%Y'),
@@ -29,12 +29,12 @@ $components = array(
     'dirPermission' => 0755,  /* No quotes!! */
     'filePermission' => 0644, /* No quotes!! */
 
-    /* Define source and target directories (mycomponent root and core directories) */
+    /* Define source and target directories */
+
+    /* path to MyComponent source files */
     'mycomponentRoot' => $this->modx->getOption('mc.root', null,
         MODX_CORE_PATH . 'components/mycomponent/'),
-    /* path to MyComponent source files */
-    'mycomponentCore' => $this->modx->getOption('mc.core_path', null,
-        MODX_CORE_PATH . 'components/mycomponent/core/components/mycomponent/'),
+
     /* path to new project root */
     'targetRoot' => MODX_ASSETS_PATH . 'mycomponents/' . $packageNameLower . '/',
 
@@ -52,7 +52,7 @@ $components = array(
             'name' => 'Example Setting One',
             'description' => 'Description for setting one',
             'namespace' => 'example',
-            'xtype' => 'textField',
+            'xtype' => 'textfield',
             'value' => 'value1',
             'area' => 'area1',
         ),
@@ -128,7 +128,7 @@ $components = array(
             'name' => 'Example Setting One',
             'description' => 'Description for setting one',
             'namespace' => 'example',
-            'xtype' => 'textField',
+            'xtype' => 'textfield',
             'value' => 'value1',
             'area' => 'example',
         ),
@@ -309,6 +309,7 @@ $components = array(
                 'category' => 'Example',
                 'description' => 'Description for TV one',
                 'caption' => 'TV One',
+                'default_text' => 'Tv1 Default Text',
                 'propertySets' => array(
                     'PropertySet1',
                     'PropertySet2',
@@ -363,7 +364,7 @@ $components = array(
                 'Tv1' => 'SomeValue',
                 'Tv2' => 'SomeOtherValue',
             ),
-        )
+        ),
     ),
 
 
@@ -385,19 +386,40 @@ $components = array(
      * Empty js and/or css files will be created.
      */
     'hasAssets' => true,
-    'minifyJS' => true,
-    /* minify any JS files */
+
     'assetsDirs' => array(
-        'css' => true,
         /* If true, a default (empty) CSS file will be created */
-        'js' => true,
+        'css' => true,
+
         /* If true, a default (empty) JS file will be created */
+        'js' => true,
+
         'images' => true,
         'audio' => true,
         'video' => true,
         'themes' => true,
     ),
+    /* minify any JS files */
+    'minifyJS' => true,
+    /* Create a single JS file from all JS files */
+    'createJSMinAll' => true,
+    /* if this is false, regular jsmin will be used.
+       JSMinPlus is slower but more reliable */
+    'useJSMinPlus' => true,
 
+    /* These will automatically go under assets/components/yourcomponent/js/
+       Format: directory:filename
+       (no trailing slash on directory)
+       if 'createCmpFiles is true, these will be ignored.
+    */
+    'jsFiles' => array(
+        'example.js',
+    ),
+
+    /* Desired CSS files */
+    'cssFiles' => array(
+        'example.css',
+    ),
 
     /* ********************************************* */
     /* Define basic directories and files to be created in project*/
@@ -474,11 +496,98 @@ $components = array(
      *
      *  Class file will be created as:
      * yourcomponent/core/components/yourcomponent/model/[directory/]{filename}.class.php
+     * Note: If a CMP is being created, classes containing the
+     * project name will be ignored here.
      *
      * Set to array() if there are no classes. */
     'classes' => array(
-        'Example' => 'example:example',
+        'AnotherClass' => 'example:anotherclass',
+
+        /* (optional) - Specify methods for each class.
+           if 'function' is missing, 'public function ' will
+           be prepended. Curly braces will be added   */
+        'methods' => array(
+            /* Add one array here for each class with methods */
+            'AnotherClass' => array(
+                'public function method1()',
+                'method2($arg1, $arg2 = false)',
+            ),
+        ),
     ),
+
+    /* ************************************
+     *  These values are for CMPs.
+     *  Set any of these to an empty array if you don't need them.
+     *  **********************************/
+
+    /* If this is false, the rest of this section will be ignored */
+
+    'createCmpFiles' => true,
+
+    /* IMPORTANT: The array values in the rest of
+       this section should be all lowercase */
+
+    /* This is the main action file for your component.
+       It will automatically go in core/component/yourcomponent/
+    */
+
+    'actionFile' => 'index.class.php',
+
+    /* CSS file for CMP */
+
+    'cssFile' => 'mgr.css',
+
+    /* These will automatically go to core/components/yourcomponent/processors/
+       format directory:filename
+       '.class.php' will be appended to the filename
+
+       Built-in processor classes include getlist, create, update, duplicate,
+       import, and export. */
+
+    'processors' => array(
+        'mgr/snippet:getlist',
+        'mgr/snippet:changecategory',
+        'mgr/snippet:remove',
+
+        'mgr/chunk:getlist',
+        'mgr/chunk:changecategory',
+        'mgr/chunk:remove',
+    ),
+
+    /* These will automatically go to core/components/yourcomponent/controllers[/directory]/filename
+       Format: directory:filename */
+
+    'controllers' => array(
+        ':home.class.php',
+    ),
+
+    /* These will automatically go in assets/components/yourcomponent/ */
+
+    'connectors' => array(
+        'connector.php'
+
+    ),
+    /* These will automatically go to assets/components/yourcomponent/js[/directory]/filename
+       Format: directory:filename */
+
+    'cmpJsFiles' => array(
+        ':example.class.js',
+        'sections:home.js',
+        'widgets:home.panel.js',
+        'widgets:snippet.grid.js',
+        'widgets:chunk.grid.js',
+    ),
+
+    /* These go to core/components/componentName/templates/
+     * The format is:
+     *    filename:content
+     * content is optional
+     */
+
+    'cmpTemplates' => array(
+        'mgr:<div id="example-panel-home-div"></div>',
+    ),
+
 
     /* *******************************************
      * These settings control exportObjects.php  *
@@ -530,4 +639,21 @@ $components = array(
 
     /* ******************** LEXICON HELPER SETTINGS ***************** */
     /* These settings are used by LexiconHelper */
-    'rewriteCodeFiles' => false,  /* remove 
+    'rewriteCodeFiles' => false,  /* remove ~~descriptions */
+    'rewriteLexiconFiles' => true, /* automatically add missing strings to lexicon files */
+    /* ******************************************* */
+
+    /* Array of aliases used in code for the properties array.
+     * Used by the checkproperties utility to check properties in code against
+     * the properties in your properties transport files.
+     * if you use something else, add it here (OK to remove ones you never use.
+     * Search also checks with '$this->' prefix -- no need to add it here. */
+    'scriptPropertiesAliases' => array(
+        'props',
+        'sp',
+        'config',
+        'scriptProperties'
+    ),
+);
+
+return $components;
