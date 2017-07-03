@@ -81,7 +81,7 @@ $tstart = $mtime;
 set_time_limit(0);
 
 
-/* Instantiate MODx -- if this require fails, check your
+/* Instantiate MODX -- if this require fails, check your
  * _build/build.config.php file
  */
 require_once dirname(dirname(__FILE__)) . '/_build/build.config.php';
@@ -180,8 +180,8 @@ $hasResources = file_exists($sources['data'] . 'transport.resources.php');
 $hasValidators = is_dir($sources['build'] . 'validators'); /* Run a validators before installing anything */
 $hasResolvers = is_dir($sources['build'] . 'resolvers');
 $hasSetupOptions = is_dir($sources['data'] . 'install.options'); /* HTML/PHP script to interact with user */
-$hasMenu = file_exists($sources['data'] . 'transport.menus.php'); /* Add items to the MODx Top Menu */
-$hasSettings = file_exists($sources['data'] . 'transport.settings.php'); /* Add new MODx System Settings */
+$hasMenu = file_exists($sources['data'] . 'transport.menus.php'); /* Add items to the MODX Top Menu */
+$hasSettings = file_exists($sources['data'] . 'transport.settings.php'); /* Add new MODX System Settings */
 $hasContextSettings = file_exists($sources['data'] . 'transport.contextsettings.php');
 $hasSubPackages = is_dir($sources['data'] . 'subpackages');
 $minifyJS = $modx->getOption('minifyJS', $props, false);

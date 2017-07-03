@@ -1,4 +1,4 @@
-CacheClear Extra for MODx Revolution
+CacheClear Extra for MODX Revolution
 =======================================
 
 
@@ -8,6 +8,6 @@ CacheClear Extra for MODx Revolution
 
 **Bugs and requests:** [CacheClear Issues](https://github.com/BobRay/CacheClear/issues)
 
-**Questions about using CacheClear** [MODx Forums](https://forums.modx.com)
+**Questions about using CacheClear** [MODX Forums](https://forums.modx.com)
 
 Utility snippet for MODX Revolution -- deletes all files in the core/cache directory
