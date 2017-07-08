@@ -4,7 +4,7 @@ CacheClear
 Deletes all files in the core/cache directory
 
 Author: Bob Ray <https://bobsguides.com>
-Copyright 2012-2017
+Copyright 2012-2017 Bob Ray
 
 Official Documentation: https://bobsguides.com/cache-clear-tutorial.html
 
