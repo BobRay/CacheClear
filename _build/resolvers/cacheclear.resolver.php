@@ -2,7 +2,7 @@
 /**
  * Resolver for CacheClear extra
  *
- * Copyright 2012-2017 by Bob Ray <https://bobsguides.com>
+ * Copyright 2012-2017 Bob Ray <https://bobsguides.com>
  * Created on 08-19-2015
  *
  * CacheClear is free software; you can redistribute it and/or modify it under the
