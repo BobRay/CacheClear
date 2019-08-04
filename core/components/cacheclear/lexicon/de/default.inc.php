@@ -2,7 +2,7 @@
 /**
  * de default topic lexicon file for CacheClear extra
  *
- * Copyright 2012-2017 Bob Ray <https://bobsguides.com>
+ * Copyright 2012-2019 Bob Ray <https://bobsguides.com>
  * Created on 12-14-2012
  * Translation by Jan-Christoph Ihrens (enigmatic-user)
  *

@@ -1,5 +1,14 @@
 Changelog for CacheClear
 
+CacheClear 1.0.4
+---------------------------------
+Update copyrights
+Add uninstall resolver
+Set resource to hide menu
+Add German translation
+Do not update resource on upgrade
+Add credit for enigmatic-user
+
 CacheClear 1.0.3
 ---------------------------------
 Update for MODX 2.3
