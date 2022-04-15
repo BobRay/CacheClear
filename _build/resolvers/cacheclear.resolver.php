@@ -28,6 +28,7 @@
 
 if ($object->xpdo) {
     $modx =& $object->xpdo;
+    $prefix = $modx->getVersionData()['version'] >= 3 ? '\MODX\Revolution\\' : '';
     switch ($options[xPDOTransport::PACKAGE_ACTION]) {
         case xPDOTransport::ACTION_INSTALL:
         case xPDOTransport::ACTION_UPGRADE:
@@ -35,7 +36,7 @@ if ($object->xpdo) {
             break;
 
         case xPDOTransport::ACTION_UNINSTALL:
-            $doc = $modx->getOption('modResource', array('alias'=> 'cache-clear'));
+            $doc = $modx->getObject($prefix . 'modResource', array('alias'=> 'cache-clear'));
             if ($doc) {
                 $doc->remove();
             } else {
