@@ -1,27 +1,31 @@
 Changelog for CacheClear
 
+CacheClear 1.3.0
+---------------------------------
+ - Modifications for MODX 3
+
 CacheClear 1.0.4
 ---------------------------------
-Update copyrights
-Add uninstall resolver
-Set resource to hide menu
-Add German translation
-Do not update resource on upgrade
-Add credit for enigmatic-user
+ - Update copyrights
+ - Add uninstall resolver
+ - Set resource to hide menu
+ - Add German translation
+ - Do not update resource on upgrade
+ - Add credit for enigmatic-user
 
 CacheClear 1.0.3
 ---------------------------------
-Update for MODX 2.3
-Update MODX constants
+ - Update for MODX 2.3
+ - Update MODX constants
 
 CacheClear 1.0.2
 ---------------------------------
-Leave error log alone
+ - Leave error log alone
 
 CacheClear 1.0.1
 ---------------------------------
-Fixed tutorial link in readme
+ - Fixed tutorial link in readme
 
 CacheClear 1.0.0
 ---------------------------------
-Initial Version
+ - Initial Version
