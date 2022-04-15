@@ -2,7 +2,7 @@ Changelog for CacheClear
 
 CacheClear 1.3.0
 ---------------------------------
- - Modifications for MODX 3
+ - Modifications for MODX 3 -- fully compatible
 
 CacheClear 1.0.4
 ---------------------------------
